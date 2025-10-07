@@ -16,15 +16,11 @@ function Home() {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
             >
-                <motion.img
+                <img
                     src={bgVideo}
                     alt="Home"
-                    className="w-full max-w-[1800px] h-auto z-[20] scale-110"
-                    initial={{ scale: 2 }}
-                    animate={{ scale: 1.5 }}
-                    transition={{ duration: 2 }}
+                    className="max-w-4xl w-full h-auto z-[20]"
                 />
-
             </motion.div>
         </motion.div>
     )
