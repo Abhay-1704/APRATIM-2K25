@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import bgImage from '../assets/Home/bg.webp'
 
 const Home = () => {
   const containerVariants = {
@@ -27,69 +28,74 @@ const Home = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-      {/* Content */}
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 text-center max-w-4xl px-4"
+      <div
+          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold mb-6 "
-        >
-         <span className="text-ccet-primary">CCET Tech Fest</span>
-        </motion.h1>
+        {/* Optional overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-        <motion.p 
-          variants={itemVariants}
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+        {/* Content */}
+        <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="relative z-10 text-center max-w-4xl px-4"
         >
-          Unleashing Innovation, Celebrating Technology, and Empowering Future Innovators
-        </motion.p>
+          <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-7xl font-bold mb-6"
+          >
+            <span className="text-ccet-primary">CCET Tech Fest</span>
+          </motion.h1>
 
-        <motion.div 
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
-        >
-          <Link to="/register">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-ccet-primary text-white px-6 py-3 rounded-full flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all"
-            >
-              <span>Register Now</span>
-            </motion.button>
-          </Link>
+          <motion.p
+              variants={itemVariants}
+              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+          >
+            Unleashing Innovation, Celebrating Technology, and Empowering Future Innovators
+          </motion.p>
 
-          <Link to="/events">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border border-ccet-primary text-ccet-primary px-6 py-3 rounded-full flex items-center justify-center space-x-2 hover:bg-ccet-primary/10 transition-all"
-            >
-              <span>Explore Events</span>
-            </motion.button>
-          </Link>
+          <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+          >
+            <Link to="/register">
+              <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-ccet-primary text-white px-6 py-3 rounded-full flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all"
+              >
+                <span>Register Now</span>
+              </motion.button>
+            </Link>
+
+            <Link to="/events">
+              <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-transparent border border-ccet-primary text-ccet-primary px-6 py-3 rounded-full flex items-center justify-center space-x-2 hover:bg-ccet-primary/10 transition-all"
+              >
+                <span>Explore Events</span>
+              </motion.button>
+            </Link>
+          </motion.div>
+
+          {/* Date and Venue */}
+          <motion.div
+              variants={itemVariants}
+              className="mt-12 text-gray-300 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8"
+          >
+            <div className="flex items-center space-x-2">
+              <span>15-17 September 2024</span>
+            </div>
+            <div className="hidden sm:block">â€¢</div>
+            <div>
+              Chandigarh College of Engineering & Technology
+            </div>
+          </motion.div>
         </motion.div>
-
-        {/* Date and Venue */}
-        <motion.div 
-          variants={itemVariants}
-          className="mt-12 text-gray-300 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8"
-        >
-          <div className="flex items-center space-x-2">
-            <span>15-17 September 2024</span>
-          </div>
-          <div className="hidden sm:block">•</div>
-          <div>
-            Chandigarh College of Engineering & Technology
-          </div>
-        </motion.div>
-      </motion.div>
-    </div>
+      </div>
   )
 }
 
