@@ -28,8 +28,6 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Subtle Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-ccet-background via-ccet-primary/10 to-ccet-accent/10 opacity-50" />
 
       {/* Content */}
       <motion.div 
@@ -38,11 +36,11 @@ const Home = () => {
         animate="visible"
         className="relative z-10 text-center max-w-4xl px-4"
       >
-        <motion.h1 
+        <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold mb-6 text-white"
+          className="text-5xl md:text-7xl font-bold mb-6 "
         >
-          CCET <span className="text-ccet-primary">Tech Fest</span>
+         <span className="text-ccet-primary">CCET Tech Fest</span>
         </motion.h1>
 
         <motion.p 
