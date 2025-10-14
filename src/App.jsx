@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import FilmReelLoader from './components/FilmReelLoader/FilmReelLoader.jsx'
 import Home from './pages/Home/Home.jsx'
 import Timeline from './pages/RetroTimeline/RetroTimeline.jsx'
+import About from './pages/About/AboutPage.jsx'
 
 function AnimatedRoutes() {
     const location = useLocation()
@@ -12,6 +13,7 @@ function AnimatedRoutes() {
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/timeline" element={<Timeline />} />
+            <Route path='/about' element={<About />} />
         </Routes>
     )
 }

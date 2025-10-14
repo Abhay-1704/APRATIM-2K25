@@ -210,9 +210,6 @@ const RetroTimeline = () => {
 
   return (
       <div className={styles.retroTimelineWrapper}>
-        <nav className={styles.navbar}>
-          <h1>🎮 RETRO TIMELINE 🎮</h1>
-        </nav>
 
         <div className={styles.container}>
           <div className={styles.daySelector}>
