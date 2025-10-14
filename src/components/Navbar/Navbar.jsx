@@ -64,7 +64,6 @@ function Navbar() {
 
   const navItems = [
     { name: 'Home', path: '/', value: 'home' },
-    { name: 'Register', path: '/register', value: 'register' },
     { name: 'Events', path: '/events', value: 'events' },
     { name: 'Timeline', path: '/timeline', value: 'timeline' },
     { name: 'Sponsors', path: '/sponsors', value: 'sponsors' },
