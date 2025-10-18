@@ -4,6 +4,9 @@ import styles from './Events.module.css';
 // Import background image
 import bgImage from '../../assets/Events/bg.webp';
 
+// Import app logo
+import appLogo from '../../assets/Events/festconnect.webp';
+
 // Import technical event images
 import hackSprintImg from '../../assets/Events/HACK-SPRINT.jpeg';
 import quizathonImg from '../../assets/Events/QUIZATHON.jpeg';
@@ -118,7 +121,6 @@ function Events() {
                     ]
                 }
             },
-            // Add remaining technical events with their imported images...
             {
                 id: 3,
                 name: "Designscape",
@@ -209,222 +211,191 @@ function Events() {
                 id: 18,
                 name: "Solo Singing",
                 image: soloSingingImg,
-                description: "Showcase your vocal talent",
-                registrationUrl: "https://forms.gle/ogJUKN8C6CABQ6Aq9"
+                description: "Showcase your vocal talent"
             },
             {
                 id: 19,
                 name: "Solo Instrumental",
                 image: soloInstrumentalImg,
-                description: "Instrumental performance",
-                registrationUrl: "https://forms.gle/9frhtwkF7BhTpqLf6"
+                description: "Instrumental performance"
             },
             {
                 id: 20,
                 name: "Group Singing",
                 image: groupSingingImg,
-                description: "Harmony in unity",
-                registrationUrl: "https://forms.gle/WJZLW49qgyBSdSkt5"
+                description: "Harmony in unity"
             },
             {
                 id: 21,
                 name: "Fusion Band",
                 image: fusionBandImg,
-                description: "Blend musical genres",
-                registrationUrl: "https://forms.gle/ehanDyv5t2pNPGhk8"
+                description: "Blend musical genres"
             },
             {
                 id: 22,
                 name: "Photography Competition",
                 image: photographyImg,
-                description: "Capture the moment",
-                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeUMrnLYtSLmQKbLFaCd7qWgNeem-eYn4Shn-kIPiCYjGrpqQ/viewform"
+                description: "Capture the moment"
             },
             {
                 id: 23,
                 name: "Videography Competition",
                 image: videographyImg,
-                description: "Tell stories through film",
-                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLScdgA-AUnOtD5Ykm42n_uc8jMShFeyggC32vTBz_OnlLnb4LQ/viewform"
+                description: "Tell stories through film"
             },
             {
                 id: 24,
                 name: "Photo Hunt",
                 image: photoHuntImg,
-                description: "Decode and capture",
-                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeJxMKoXLDNspb7EaTBXS2XSLhCtNDBqUu3WooyAcZi6tEdfw/viewform"
+                description: "Decode and capture"
             },
             {
                 id: 25,
                 name: "Photo Essay",
                 image: photoEssayImg,
-                description: "Visual storytelling",
-                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLScPtHpUaoHJBNseAXTatHEJiUP7OBQUA7ehG--bzvH9Db2yKQ/viewform"
+                description: "Visual storytelling"
             },
             {
                 id: 26,
                 name: "Group Dance",
                 image: groupDanceImg,
-                description: "Synchronize and shine",
-                registrationUrl: "https://forms.gle/ffGmPcMmo3CNZVdx5"
+                description: "Synchronize and shine"
             },
             {
                 id: 27,
                 name: "Duet Dance",
                 image: duetDanceImg,
-                description: "Dance in harmony",
-                registrationUrl: "https://forms.gle/2JFMt9ZF2JSGAj958"
+                description: "Dance in harmony"
             },
             {
                 id: 28,
                 name: "Prop Hustle",
                 image: propHustleImg,
-                description: "Creative prop performance",
-                registrationUrl: "https://forms.gle/B7TnKebnW5b4kY7z7"
+                description: "Creative prop performance"
             },
             {
                 id: 29,
                 name: "Catch The Hook",
                 image: catchTheHookImg,
-                description: "Dance to the hook step",
-                registrationUrl: "https://forms.gle/4bK3DkBztWHMCLpJA"
+                description: "Dance to the hook step"
             },
             {
                 id: 30,
                 name: "Mr and Ms Apratim",
                 image: mrAndMsImg,
-                description: "Talent and charisma",
-                registrationUrl: "https://forms.gle/GwMKLKzuDhFQhGVB8"
+                description: "Talent and charisma"
             },
             {
                 id: 31,
                 name: "CCET Fashion Icon",
                 image: fashionIconImg,
-                description: "Strut your style",
-                registrationUrl: "https://forms.gle/GwMKLKzuDhFQhGVB8"
+                description: "Strut your style"
             },
             {
                 id: 32,
                 name: "Punjabi Folk Dance",
                 image: punjabiImg,
-                description: "Bhangra competition",
-                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeRyJIIirwyaLd4seey6FdjZhcuvGPM-4k9pP__OaTE7IV8nA/viewform"
+                description: "Bhangra competition"
             },
             {
                 id: 33,
                 name: "Nukkad Natak",
                 image: nukkadNatakImg,
-                description: "Street play",
-                registrationUrl: "https://forms.gle/mmrviBz8JPBVyBQZ7"
+                description: "Street play"
             },
             {
                 id: 34,
                 name: "Insta Act",
                 image: instaActImg,
-                description: "Instant acting",
-                registrationUrl: "https://forms.gle/8h5o9y3o9gk2Yk6TA"
+                description: "Instant acting"
             },
             {
                 id: 35,
                 name: "Mashhoori",
                 image: mashooriImg,
-                description: "Creative advertising",
-                registrationUrl: "https://forms.gle/UvxPY3sxQmotcWe47"
+                description: "Creative advertising"
             },
             {
                 id: 36,
                 name: "Monologue",
                 image: monologueImg,
-                description: "Solo performance",
-                registrationUrl: "https://forms.gle/HdW2SD3hSmnAqugR7"
+                description: "Solo performance"
             },
             {
                 id: 37,
                 name: "Iski Topi Uske Sar",
                 image: iskiTopiImg,
-                description: "Role reversal duet",
-                registrationUrl: "https://forms.gle/DEndx6wQQUpDtYNJ7"
+                description: "Role reversal duet"
             },
             {
                 id: 38,
                 name: "Custom Art",
                 image: customArtsImg,
-                description: "Customize objects",
-                registrationUrl: "https://forms.gle/WCcmn6mfvb2n5jsE6"
+                description: "Customize objects"
             },
             {
                 id: 39,
                 name: "Painting",
                 image: paintingImg,
-                description: "Paint your imagination",
-                registrationUrl: "https://forms.gle/A5KTPpqh2VWrEq4H8"
+                description: "Paint your imagination"
             },
             {
                 id: 40,
                 name: "Sketching",
                 image: sketchingImg,
-                description: "Pencil artistry",
-                registrationUrl: "https://forms.gle/DqEYPjXUg2RK8gPF6"
+                description: "Pencil artistry"
             },
             {
                 id: 41,
                 name: "CD Crafting",
                 image: cdCraftingImg,
-                description: "Transform old CDs",
-                registrationUrl: "https://forms.gle/kvaPxapcmiKksAK47"
+                description: "Transform old CDs"
             },
             {
                 id: 42,
                 name: "Open Mic",
                 image: openMicImg,
-                description: "Express yourself",
-                registrationUrl: "https://forms.gle/LKd3Gm1KiPN1bCjX8"
+                description: "Express yourself"
             },
             {
                 id: 43,
                 name: "Story Writing",
                 image: storyWritingImg,
-                description: "Craft compelling stories",
-                registrationUrl: "https://forms.gle/27CJPkX4bApeR9J76"
+                description: "Craft compelling stories"
             },
             {
                 id: 44,
                 name: "Debate",
                 image: debateImg,
-                description: "Moot court competition",
-                registrationUrl: "https://forms.gle/vaRqTkGXhqWTqTTL7"
+                description: "Moot court competition"
             },
             {
                 id: 45,
                 name: "Murder Mystery",
                 image: murderMysteryImg,
-                description: "Solve the mystery",
-                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSerk21ZOhI24oPxJzEAVzJHM3cPgFSLx4NgnxRoLn9g1P9tpw/viewform"
+                description: "Solve the mystery"
             },
             {
                 id: 46,
                 name: "Console Showdown",
                 image: consoleShowdownImg,
-                description: "Gaming competition",
-                registrationUrl: "https://forms.gle/8ry1XCGzM22vUAPT7"
+                description: "Gaming competition"
             },
             {
                 id: 47,
                 name: "Pocket Wars",
                 image: pocketWarsImg,
-                description: "Mobile gaming event",
-                registrationUrl: "https://forms.gle/8ry1XCGzM22vUAPT7"
+                description: "Mobile gaming event"
             }
         ]
     };
-
-    const technicalRegistrationFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfoaap-vlkmh5uKW0KNrat3_qnIVU4ZSEvpYsjdfevI9IKmYg/viewform";
 
     return (
         <div className={styles.app} style={{ backgroundImage: `url(${bgImage})` }}>
             <div className={styles.homeSection}>
                 <div className={styles.homeContent}>
                     <h1 className={styles.mainTitle}>EVENTS</h1>
+
                     <div className={styles.categoryButtons}>
                         <button
                             className={`${styles.glowButton} ${styles.technicalButton}`}
@@ -454,19 +425,45 @@ function Events() {
                                     ✕
                                 </button>
                             </div>
+
+                            {/* Registration Info Banner */}
+                            <div className={styles.registrationBanner}>
+                                <img src={appLogo} alt="Fest Connect App" className={styles.appLogo} />
+                                <h3 className={styles.bannerTitle}>Register for Events</h3>
+                                <p className={styles.bannerText}>Download Fest Connect App to register for all events</p>
+                                <div className={styles.appLinks}>
+                                    <a
+                                        href="https://play.google.com/store/apps/details?id=com.festconnect.app"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.appLink}
+                                    >
+                                        <svg className={styles.appIcon} viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                                        </svg>
+                                        <span className={styles.appText}>Android</span>
+                                    </a>
+                                    <a
+                                        href="https://apps.apple.com/in/app/fest-connect/id6751292964"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.appLink}
+                                    >
+                                        <svg className={styles.appIcon} viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+                                        </svg>
+                                        <span className={styles.appText}>iOS</span>
+                                    </a>
+                                </div>
+                            </div>
+
                             <div className={styles.eventsContainer}>
-                                {selectedCategory === 'technical' && (
-                                    <div className={styles.allEventsRegister}>
-                                        <button
-                                            className={styles.registerButton}
-                                            onClick={() => window.open(technicalRegistrationFormUrl, '_blank')}
-                                        >
-                                            REGISTER FOR ALL EVENTS
-                                        </button>
-                                    </div>
-                                )}
-                                {events[selectedCategory].map(event => (
-                                    <div key={event.id} className={styles.eventCard}>
+                                {events[selectedCategory].map((event, index) => (
+                                    <div
+                                        key={event.id}
+                                        className={styles.eventCard}
+                                        style={{ '--card-index': index }}
+                                    >
                                         <img src={event.image} alt={event.name} className={styles.eventImage} />
                                         <div className={styles.eventContent}>
                                             <h3 className={styles.eventName}>{event.name}</h3>
@@ -478,14 +475,6 @@ function Events() {
                                                 >
                                                     MORE INFORMATION
                                                 </button>
-                                                {selectedCategory === 'cultural' && (
-                                                    <button
-                                                        className={styles.registerButton}
-                                                        onClick={() => window.open(event.registrationUrl, '_blank')}
-                                                    >
-                                                        REGISTER
-                                                    </button>
-                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -524,7 +513,7 @@ function Events() {
                                             <h3>Highlights:</h3>
                                             <ul>
                                                 {selectedEvent.moreInfo.highlights.map((item, i) => (
-                                                    <li key={i}>{item}</li>
+                                                    <li key={i} style={{ '--li-index': i }}>{item}</li>
                                                 ))}
                                             </ul>
                                         </>
@@ -534,7 +523,7 @@ function Events() {
                                             <h3>Rules:</h3>
                                             <ul>
                                                 {selectedEvent.moreInfo.rules.map((item, i) => (
-                                                    <li key={i}>{item}</li>
+                                                    <li key={i} style={{ '--li-index': i }}>{item}</li>
                                                 ))}
                                             </ul>
                                         </>

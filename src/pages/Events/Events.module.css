@@ -28,6 +28,7 @@
     z-index: 2;
     text-align: center;
     padding: 20px;
+    animation: fadeInUp 1s ease-out;
 }
 
 .mainTitle {
@@ -43,7 +44,7 @@
             0 0 80px #ff00ff;
     margin: 0 0 50px 0;
     padding: 0;
-    animation: pulse 2s infinite alternate;
+    animation: pulse 2s infinite alternate, float 3s ease-in-out infinite;
     letter-spacing: 5px;
 }
 
@@ -67,9 +68,10 @@
     z-index: 1;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 0 15px currentColor;
     background: rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 0.8s ease-out;
 }
 
 .glowButton::before {
@@ -79,28 +81,52 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.6s;
     z-index: -1;
+}
+
+.glowButton::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
 }
 
 .glowButton:hover::before {
     left: 100%;
 }
 
+.glowButton:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
 .glowButton:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px currentColor;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 40px currentColor;
+}
+
+.glowButton:active {
+    transform: translateY(-5px) scale(1.02);
 }
 
 .technicalButton {
     color: #00ffff;
     border: 2px solid #00ffff;
+    animation-delay: 0.2s;
 }
 
 .culturalButton {
     color: #ff00ff;
     border: 2px solid #ff00ff;
+    animation-delay: 0.4s;
 }
 
 /* Events Section */
@@ -112,6 +138,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .eventsContent {
@@ -129,15 +156,17 @@
     align-items: center;
     margin-bottom: 30px;
     padding: 0 20px;
+    animation: slideInFromTop 0.6s ease-out;
 }
 
 .eventCategoryTitle {
     font-family: 'Press Start 2P', cursive;
     color: #00ffff;
-    text-shadow: 0 0 10px #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
     font-size: 1.8rem;
     margin: 0;
     letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite;
 }
 
 .closeButton {
@@ -150,13 +179,14 @@
     font-size: 1.5rem;
     cursor: pointer;
     box-shadow: 0 0 10px #ff0055;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 10;
+    animation: rotateIn 0.6s ease-out;
 }
 
 .closeButton:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #ff0055;
+    transform: scale(1.2) rotate(90deg);
+    box-shadow: 0 0 30px #ff0055;
 }
 
 /* Events Container */
@@ -175,15 +205,18 @@
     border-radius: 15px;
     overflow: hidden;
     width: 100%;
-    box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 204, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(0, 204, 255, 0.3);
     position: relative;
+    animation: fadeInUp 0.6s ease-out backwards;
+    animation-delay: calc(var(--card-index) * 0.1s);
 }
 
 .eventCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(255, 0, 255, 0.6);
+    border-color: rgba(255, 0, 255, 0.6);
 }
 
 .eventCard::before {
@@ -194,16 +227,43 @@
     right: 0;
     height: 5px;
     background: linear-gradient(90deg, #ff00cc, #00ccff);
+    animation: shimmer 3s linear infinite;
+}
+
+.eventCard::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 0, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.eventCard:hover::after {
+    opacity: 1;
 }
 
 .eventImage {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.eventCard:hover .eventImage {
+    transform: scale(1.1);
+    filter: brightness(1.1);
 }
 
 .eventContent {
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .eventName {
@@ -212,6 +272,12 @@
     font-size: 1.5rem;
     margin: 0 0 15px 0;
     text-shadow: 0 0 5px #00ffff;
+    transition: all 0.3s ease;
+}
+
+.eventCard:hover .eventName {
+    text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
+    transform: scale(1.05);
 }
 
 .eventDescription {
@@ -219,6 +285,11 @@
     font-size: 1rem;
     line-height: 1.5;
     margin: 0 0 20px 0;
+    transition: color 0.3s ease;
+}
+
+.eventCard:hover .eventDescription {
+    color: #fff;
 }
 
 .eventButtons {
@@ -235,8 +306,28 @@
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 0 10px currentColor;
+    position: relative;
+    overflow: hidden;
+}
+
+.infoButton::before, .registerButton::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.infoButton:hover::before, .registerButton:hover::before {
+    width: 200px;
+    height: 200px;
 }
 
 .infoButton {
@@ -252,23 +343,129 @@
 }
 
 .infoButton:hover, .registerButton:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 5px 25px currentColor;
+}
+
+.infoButton:active, .registerButton:active {
     transform: scale(1.05);
-    box-shadow: 0 0 20px currentColor;
 }
 
-/* All Events Register Button */
-.allEventsRegister {
-    width: 100%;
+/* Registration Banner */
+.registrationBanner {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(255, 0, 255, 0.15));
+    border: 2px solid rgba(0, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px auto 30px;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInScale 0.8s ease-out 0.4s backwards;
+}
+
+.registrationBanner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+    animation: bannerShine 3s linear infinite;
+}
+
+.appLogo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.bannerTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin: 0 0 15px 0;
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+.bannerText {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.appLinks {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    margin-top: 30px;
-    padding: 20px 0;
+    flex-wrap: wrap;
 }
 
-.allEventsRegister .registerButton {
-    font-size: 1.2rem;
-    padding: 15px 40px;
-    width: auto;
+.appLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    color: #00ffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.appLink::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.appLink:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.appLink:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 35px rgba(0, 255, 255, 0.6);
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.appIcon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.appLink:hover .appIcon {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.appText {
+    letter-spacing: 1px;
 }
 
 /* Modal Styles */
@@ -284,6 +481,7 @@
     align-items: center;
     z-index: 1000;
     backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
 }
 
 .modalContent {
@@ -296,6 +494,7 @@
     box-shadow: 0 0 30px rgba(0, 204, 255, 0.5);
     border: 1px solid rgba(0, 204, 255, 0.5);
     position: relative;
+    animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .modalHeader {
@@ -304,6 +503,18 @@
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid rgba(0, 204, 255, 0.3);
+    position: relative;
+}
+
+.modalHeader::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: shimmer 2s linear infinite;
 }
 
 .modalTitle {
@@ -312,6 +523,7 @@
     font-size: 1.5rem;
     margin: 0;
     text-shadow: 0 0 5px #00ffff;
+    animation: glow 2s ease-in-out infinite;
 }
 
 .modalCloseButton {
@@ -324,12 +536,12 @@
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0 0 10px #ff0055;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .modalCloseButton:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #ff0055;
+    transform: scale(1.2) rotate(90deg);
+    box-shadow: 0 0 25px #ff0055;
 }
 
 .modalBody {
@@ -342,6 +554,12 @@
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
+    animation: fadeInScale 0.6s ease-out 0.2s backwards;
+    transition: transform 0.3s ease;
+}
+
+.modalImage:hover {
+    transform: scale(1.02);
 }
 
 .modalDescription {
@@ -349,6 +567,11 @@
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    animation: fadeInUp 0.6s ease-out 0.3s backwards;
+}
+
+.modalMoreInfo {
+    animation: fadeInUp 0.6s ease-out 0.4s backwards;
 }
 
 .modalMoreInfo h3 {
@@ -368,6 +591,8 @@
 .modalMoreInfo li {
     margin-bottom: 10px;
     line-height: 1.5;
+    animation: slideInFromLeft 0.5s ease-out backwards;
+    animation-delay: calc(var(--li-index) * 0.1s);
 }
 
 .modalMoreInfo p {
@@ -378,12 +603,132 @@
 }
 
 /* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
 @keyframes pulse {
     0% {
         text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
     }
     100% {
         text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff, 0 0 60px #ff00ff;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+    }
+    50% {
+        text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes bannerShine {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
     }
 }
 
@@ -413,6 +758,16 @@
 @media (max-width: 1024px) {
     .eventsContainer {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .appLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .appLink {
+        width: 80%;
+        justify-content: center;
     }
 }
 
@@ -452,5 +807,28 @@
 
     .modalTitle {
         font-size: 1.2rem;
+    }
+
+    .bannerTitle {
+        font-size: 1.3rem;
+    }
+
+    .bannerText {
+        font-size: 1rem;
+    }
+
+    .appLogo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .appLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .appLink {
+        width: 90%;
+        justify-content: center;
     }
 }
