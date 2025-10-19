@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar.jsx'
-import FilmReelLoader from './components/FilmReelLoader/FilmReelLoader.jsx'
+import ImageRewindLoader from './components/ImageRewindLoader/ImageRewindLoader.jsx' // Changed import
 import BackToHome from './components/BacktoHome/BacktoHome.jsx'
 import Home from './pages/Home/Home.jsx'
 import Schedule from './pages/Schedule/SchedulePage.jsx'
 import About from './pages/About/AboutPage.jsx'
 import Events from './pages/Events/Events.jsx'
+import ComingSoon from './pages/ComingSoon/ComingSoon.jsx'
 
 function AnimatedRoutes() {
     const location = useLocation()
@@ -19,6 +19,7 @@ function AnimatedRoutes() {
                 <Route path="/schedule" element={<Schedule />} />
                 <Route path='/about' element={<About />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/sponsors" element={<ComingSoon />} />
             </Routes>
         </>
     )
@@ -45,7 +46,7 @@ function App() {
     return (
         <Router>
             {isLoading && !hasVisited && (
-                <FilmReelLoader onLoadingComplete={handleLoadingComplete} />
+                <ImageRewindLoader onLoadingComplete={handleLoadingComplete} />
             )}
             <AnimatedRoutes />
         </Router>
