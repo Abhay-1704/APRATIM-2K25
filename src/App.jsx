@@ -3,7 +3,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import Navbar from './components/Navbar/Navbar.jsx'
 import FilmReelLoader from './components/FilmReelLoader/FilmReelLoader.jsx'
 import Home from './pages/Home/Home.jsx'
-import Timeline from './pages/RetroTimeline/RetroTimeline.jsx'
+import Schedule from './pages/Schedule/SchedulePage.jsx'
 import About from './pages/About/AboutPage.jsx'
 import Events from './pages/Events/Events.jsx'
 
@@ -13,7 +13,7 @@ function AnimatedRoutes() {
     return (
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
-            <Route path="/timeline" element={<Timeline />} />
+            <Route path="/schedule" element={<Schedule />} />
             <Route path='/about' element={<About />} />
             <Route path="/events" element={<Events />} />
         </Routes>
