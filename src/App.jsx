@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import ImageRewindLoader from './components/ImageRewindLoader/ImageRewindLoader.jsx' // Changed import
+import ImageRewindLoader from './components/ImageRewindLoader/ImageRewindLoader.jsx'
 import BackToHome from './components/BacktoHome/BacktoHome.jsx'
+import PageTransition from './components/PageTransition/PageTransition.jsx'
 import Home from './pages/Home/Home.jsx'
 import Schedule from './pages/Schedule/SchedulePage.jsx'
 import About from './pages/About/AboutPage.jsx'
 import Events from './pages/Events/Events.jsx'
 import ComingSoon from './pages/ComingSoon/ComingSoon.jsx'
+import transitionAnimation from './assets/Loader/Phoenix.json'
 
 function AnimatedRoutes() {
     const location = useLocation()
+    const [displayLocation, setDisplayLocation] = useState(location)
 
     return (
         <>
+            <PageTransition
+                currentLocation={location}
+                displayLocation={displayLocation}
+                onLocationChange={setDisplayLocation}
+                lottieJson={transitionAnimation}
+            />
             <BackToHome />
-            <Routes location={location} key={location.pathname}>
+            <Routes location={displayLocation} key={displayLocation.pathname}>
                 <Route path="/" element={<Home />} />
                 <Route path="/schedule" element={<Schedule />} />
                 <Route path='/about' element={<About />} />
