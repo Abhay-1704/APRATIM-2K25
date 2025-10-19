@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar.jsx'
 import FilmReelLoader from './components/FilmReelLoader/FilmReelLoader.jsx'
+import BackToHome from './components/BackToHome/BackToHome.jsx'
 import Home from './pages/Home/Home.jsx'
 import Schedule from './pages/Schedule/SchedulePage.jsx'
 import About from './pages/About/AboutPage.jsx'
@@ -11,12 +12,15 @@ function AnimatedRoutes() {
     const location = useLocation()
 
     return (
-        <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path='/about' element={<About />} />
-            <Route path="/events" element={<Events />} />
-        </Routes>
+        <>
+            <BackToHome />
+            <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<Home />} />
+                <Route path="/schedule" element={<Schedule />} />
+                <Route path='/about' element={<About />} />
+                <Route path="/events" element={<Events />} />
+            </Routes>
+        </>
     )
 }
 
@@ -43,7 +47,6 @@ function App() {
             {isLoading && !hasVisited && (
                 <FilmReelLoader onLoadingComplete={handleLoadingComplete} />
             )}
-            <Navbar />
             <AnimatedRoutes />
         </Router>
     )
