@@ -6,7 +6,7 @@ import gifFile from '../../assets/Home/animation.gif'
 // Import your corner images
 import upcomingEvents from '../../assets/Home/Events.png'
 import schedule from '../../assets/Home/Schedule.png'
-import sponsors from '../../assets/Home/Sponsers.png'
+import sponsors from '../../assets/Home/Sponsors.png'
 import aboutApratim from '../../assets/Home/About.png'
 
 const Home = () => {
