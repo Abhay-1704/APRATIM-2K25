@@ -9,6 +9,7 @@ import About from './pages/About/AboutPage.jsx'
 import Events from './pages/Events/Events.jsx'
 import ComingSoon from './pages/ComingSoon/ComingSoon.jsx'
 import transitionAnimation from './assets/Loader/Phoenix.json'
+import Gallery from './pages/Gallery/Gallery'
 
 function AnimatedRoutes() {
     const location = useLocation()
@@ -29,6 +30,7 @@ function AnimatedRoutes() {
                 <Route path='/about' element={<About />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/sponsors" element={<ComingSoon />} />
+                <Route path="/gallery" element={<Gallery />} />
             </Routes>
         </>
     )
