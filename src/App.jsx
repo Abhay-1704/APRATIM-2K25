@@ -25,7 +25,7 @@ function AnimatedRoutes() {
             <BackToHome />
             <Routes location={displayLocation} key={displayLocation.pathname}>
                 <Route path="/" element={<Home />} />
-                <Route path="/schedule" element={<Schedule />} />
+                <Route path="/schedule" element={<ComingSoon />} />
                 <Route path='/about' element={<About />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/sponsors" element={<ComingSoon />} />
